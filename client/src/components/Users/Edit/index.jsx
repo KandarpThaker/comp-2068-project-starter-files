@@ -11,7 +11,7 @@ const Edit = () => {
   const [userDetails, setUserDetails] = useState(null);
 
   useEffect(() => {
-    Axios.get(`http://localhost:4000/users/show?secret_token=${user.token}`)
+    Axios.get(`http://localhost:4000/users/show`)
     .then(({ data }) => {
       setUserDetails(data);
     });
@@ -23,7 +23,9 @@ const Edit = () => {
         <Header title="Edit your profile!"/>
         
         <Container>
-         
+          <p>
+            The content is editable under <strong>/src/components/Users/Edit/index.jsx</strong>
+          </p>
 
           <UserForm
             preloadData={ userDetails }

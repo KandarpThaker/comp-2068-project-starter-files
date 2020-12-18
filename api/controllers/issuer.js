@@ -1,4 +1,4 @@
-const Issuer = require('../models/book');
+const Issuer = require('../models/issuer');
 const jwt = require('jsonwebtoken');
 
 exports.index = async (req, res, next) => {
@@ -24,8 +24,9 @@ exports.show = async (req, res, next) => {
 exports.create = async (req, res, next) => {
     console.log(req.body);
     try {
-        const { issuerName, issuerDoB, issuerAddress } = req.body;
+        const { bookIssue,issuerName, issuerDoB, issuerAddress } = req.body;
         const issuer = await Issuer.create({
+            bookIssue,
             issuerName,
             issuerDoB,
             issuerAddress,
@@ -39,8 +40,9 @@ exports.create = async (req, res, next) => {
 };
 exports.update = async (req, res, next) => {
     try {
-        const { _id, issuerName, issuerDoB, issuerAddress } = req.body;
+        const { _id, bookIssue,issuerName, issuerDoB, issuerAddress } = req.body;
         const issuer = await Issuer.findOneAndUpdate({ _id }, {
+            bookIssue,
             issuerName,
             issuerDoB,
             issuerAddress

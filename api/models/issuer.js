@@ -1,4 +1,8 @@
 const issueSchema = mongoose.Schema({
+  bookIssue:{
+    type: String,
+    require: true
+  },
     issueName:{
       type: String,
       require: true
@@ -17,4 +21,4 @@ const issueSchema = mongoose.Schema({
     timestamps: true
   }
   );
-  module.exports = mongoose.model('issue', issueSchema);
+  module.exports = mongoose.model('issuer', issueSchema);

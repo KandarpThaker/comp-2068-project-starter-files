@@ -70,6 +70,7 @@ const Book = () => {
             </tbody>
           </Table>
         ) : null}
+        <button> <Link to={`book/new`}> Add Book</Link></button>
       </Container>
     </>
   );

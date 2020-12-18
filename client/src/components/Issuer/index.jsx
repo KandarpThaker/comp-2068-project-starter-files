@@ -36,6 +36,7 @@ const Issuer = () => {
         {issuer && issuer.length > 0 ? (
           <Table striped bordered hover>
             <thead>
+              <th>Book Issued</th>
               <th>Issuer Name</th>
               <th>Issuer Date Of Birth</th>
               <th>Issuer Address</th>
@@ -46,6 +47,9 @@ const Issuer = () => {
             <tbody>
               {issuer.map((issuer, i) => (
                 <tr key={i}>
+                  <td>
+                    {issuer.bookIssue}
+                  </td>
                   <td>
                     {issuer.issuerName}
                   </td>
@@ -70,7 +74,9 @@ const Issuer = () => {
             </tbody>
           </Table>
         ) : null}
+      <button> <Link to={`issuers/new`}> Issue Book</Link></button>
       </Container>
+    
     </>
   );
 }

@@ -3,7 +3,6 @@ import React, { useState, useContext } from 'react';
 import { useEffect } from 'react';
 import { UserContext } from '../../Authentication/UserProvider';
 import { GlobalStoreContext } from '../../shared/Globals';
-import { NotificationContext } from '../../shared/Notifications';
 import { Container, Media } from 'react-bootstrap';
 import Header from '../../shared/Header';
 import { Link } from 'react-router-dom';
@@ -11,7 +10,6 @@ import { Link } from 'react-router-dom';
 const Show = () => {
   const { user } = useContext(UserContext);
   const { globalStore } = useContext(GlobalStoreContext);
-  const { setNotification } = useContext(NotificationContext);
   const [userDetails, setUserDetails] = useState(null);
 
   useEffect(() => {
@@ -24,15 +22,19 @@ const Show = () => {
   return (
     userDetails ? (
       <>
-        <Header title="User Profile">
+        <Header title="Your title for the Header component block">
           <p>
-            Your Beautiful profile goes here.
+            This paragraph will be the value for <strong>&#123;children&#125;</strong> in the <strong>Header component</strong>.
+          </p>
+
+          <p>
+            The header is editable under <strong>/src/components/Users/Show/index.jsx</strong>
           </p>
         </Header>
 
         <Container>
           <p>
-           To edit your profile please click on this link here  <Link to="/profile/edit">Edit profile</Link>
+            The content is editable under <strong>/src/components/Users/Show/index.jsx</strong>
           </p>
 
           <Media>
@@ -51,12 +53,10 @@ const Show = () => {
               <p>
                 <strong>Since:</strong>&nbsp;{userDetails.createdAt}
               </p>
-              <strong>
-                <p>
-                <button><Link to="/profile/edit">Edit profile</Link></button>
+
+              <p>
+                <Link to="/profile/edit">Edit profile...</Link>
               </p>
-              </strong>
-             
             </Media.Body>
           </Media>
         </Container>

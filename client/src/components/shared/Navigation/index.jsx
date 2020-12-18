@@ -34,7 +34,7 @@ const Navigation = () => {
           {user && user.token ? (
             <>
             <Link to="/issuers" component={NavLink}>Issue</Link> 
-            <Link to="/book/new" component={NavLink}>Add book</Link> 
+
               <Link to="/users" component={NavLink}>Users</Link>  
               <Link to="/profile" component={NavLink}>User Profile</Link>
               <Link to="/logout" component={NavLink}>Logout</Link>

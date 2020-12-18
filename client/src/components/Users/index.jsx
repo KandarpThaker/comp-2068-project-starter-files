@@ -21,17 +21,19 @@ const Users = () => {
         message: "Couldn't access the users at this time."
       });
     });
-  }, []);
+  }, [globalStore, setNotification]);
 
   return (
     users ? (
       <>
-        <Header title="Users List">
+        <Header title="Your title for the Header component block">
           <p>
-            List of all the users can be found here!
+            This paragraph will be the value for <strong>&#123;children&#125;</strong> in the <strong>Header component</strong>.
           </p>
 
-        
+          <p>
+            The header is editable under <strong>/src/components/Users/index.jsx</strong>
+          </p>
         </Header>
 
         <Container className="my-3">
@@ -45,7 +47,7 @@ const Users = () => {
 
             <tbody>
               {users.map(({name, email}, i) => (
-                <tr key={i}>
+                <tr>
                   <td>{name}</td>
                   <td>{email}</td>
                 </tr>

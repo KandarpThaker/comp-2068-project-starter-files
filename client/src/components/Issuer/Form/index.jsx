@@ -56,6 +56,17 @@ const IssuerForm = ({ endpoint, preload }) => {
   if (redirect) return <Redirect to="/issuers"/>;
   return (
     <Form onSubmit={handleSubmit}>
+      <Form.Label> Book Issued</Form.Label>
+
+<Form.Group>
+  <Form.Control 
+    onChange={handleChange} 
+    name="Book Issued" 
+    placeholder="Enter book issued"
+   // defaultValue={inputs.bookName}
+  />
+</Form.Group>
+
       <Form.Label>Issuer Name</Form.Label>
 
       <Form.Group>
