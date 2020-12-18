@@ -24,19 +24,15 @@ const Show = () => {
   return (
     userDetails ? (
       <>
-        <Header title="Your title for the Header component block">
+        <Header title="User Profile">
           <p>
-            This paragraph will be the value for <strong>&#123;children&#125;</strong> in the <strong>Header component</strong>.
-          </p>
-
-          <p>
-            The header is editable under <strong>/src/components/Users/Show/index.jsx</strong>
+            Your Beautiful profile goes here.
           </p>
         </Header>
 
         <Container>
           <p>
-            The content is editable under <strong>/src/components/Users/Show/index.jsx</strong>
+           To edit your profile please click on this link here  <Link to="/profile/edit">Edit profile</Link>
           </p>
 
           <Media>
@@ -55,10 +51,12 @@ const Show = () => {
               <p>
                 <strong>Since:</strong>&nbsp;{userDetails.createdAt}
               </p>
-
-              <p>
-                <Link to="/profile/edit">Edit profile...</Link>
+              <strong>
+                <p>
+                <button><Link to="/profile/edit">Edit profile</Link></button>
               </p>
+              </strong>
+             
             </Media.Body>
           </Media>
         </Container>

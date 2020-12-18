@@ -13,8 +13,8 @@ exports.index = async (req, res, next) => {
 
 exports.show = async (req, res, next) => {
   try {
-    const { _id } = req.user;
-    let user = await User.findOne({ _id });
+    //const { _id } = req.parans;
+    const user = await User.findById(req.params.id);
     res.status(200).json(user);
   } catch (error) {
     console.error(error);

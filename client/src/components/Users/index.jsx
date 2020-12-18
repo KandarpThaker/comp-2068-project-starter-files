@@ -26,14 +26,12 @@ const Users = () => {
   return (
     users ? (
       <>
-        <Header title="Your title for the Header component block">
+        <Header title="Users List">
           <p>
-            This paragraph will be the value for <strong>&#123;children&#125;</strong> in the <strong>Header component</strong>.
+            List of all the users can be found here!
           </p>
 
-          <p>
-            The header is editable under <strong>/src/components/Users/index.jsx</strong>
-          </p>
+        
         </Header>
 
         <Container className="my-3">
@@ -47,7 +45,7 @@ const Users = () => {
 
             <tbody>
               {users.map(({name, email}, i) => (
-                <tr>
+                <tr key={i}>
                   <td>{name}</td>
                   <td>{email}</td>
                 </tr>
